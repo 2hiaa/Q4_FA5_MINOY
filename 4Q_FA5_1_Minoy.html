@@ -22,7 +22,6 @@
 
       let shape = "";
       if (number % 2 !== 0) {
-        // Odd number: generate rectangle
         for (let i = number; i >= 1; i--) {
           for (let j = 0; j < number; j++) {
             shape += i + " ";
@@ -30,7 +29,6 @@
           shape += "<br>";
         }
       } else {
-        // Even number: generate triangle
         for (let i = number; i >= 1; i--) {
           for (let j = 0; j < i; j++) {
             shape += i + " ";
