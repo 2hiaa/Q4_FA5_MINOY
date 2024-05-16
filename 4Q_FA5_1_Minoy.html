@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shape Generator</title>
+</head>
+<body>
+  <h1>Shape Generator</h1>
+  <div id="output"></div>
+
+  <script>
+    function promptForNumber() {
+      let number;
+      do {
+        number = prompt("Please enter a number:");
+      } while (isNaN(number) || number === null || number.trim() === "");
+      return parseInt(number, 10);
+    }
+
+    function generateShape(number) {
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = `Number inputted: ${number}<br>`;
+
+      let shape = "";
+      if (number % 2 !== 0) {
+        // Odd number: generate rectangle
+        for (let i = number; i >= 1; i--) {
+          for (let j = 0; j < number; j++) {
+            shape += i + " ";
+          }
+          shape += "<br>";
+        }
+      } else {
+        // Even number: generate triangle
+        for (let i = number; i >= 1; i--) {
+          for (let j = 0; j < i; j++) {
+            shape += i + " ";
+          }
+          shape += "<br>";
+        }
+      }
+
+      outputDiv.innerHTML += shape;
+    }
+
+    const number = promptForNumber();
+    generateShape(number);
+  </script>
+</body>
+</html>
