@@ -40,10 +40,10 @@
 
       if (name !== "") {
         if (contacts.length >= 7) {
-          contacts.shift(); // Remove the first contact if the list is full
+          contacts.shift(); 
         }
         contacts.push(name);
-        nameInput.value = ""; // Clear the input field
+        nameInput.value = "";
         displayContacts();
       } else {
         alert("Please enter a name.");
@@ -59,7 +59,6 @@
       }
     }
 
-    // Initial display
     displayContacts();
   </script>
 </body>
